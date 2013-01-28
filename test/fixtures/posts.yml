@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event: MyString
+  owner: MyString
+  category: MyString
+  eventDate: 2013-01-24
+  eventTime: 2013-01-24 18:42:20
+  location: MyString
+  description: MyText
+
+two:
+  event: MyString
+  owner: MyString
+  category: MyString
+  eventDate: 2013-01-24
+  eventTime: 2013-01-24 18:42:20
+  location: MyString
+  description: MyText
