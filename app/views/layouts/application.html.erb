@@ -6,18 +6,36 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<header>
-<a href="index.html"><img src="/images/caLogo.png" alt="CA Logo" title="Code Avengers"></a>
-<nav>
-<a href="plan.html">Plan</a><a href="day1.html">Day 1</a><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a>
-</nav>
-</header>
-<footer>
-Created by Jon
-</footer>
 <body>
-
-<%= yield %>
-
+	<header>
+		<div id="headerstuff">
+			<a href="/"><img id="logo" src="/assets/rails.png" alt="CA Logo" title="Code Avengers"></a>
+			<div id="user-nav">
+			  <% if user_signed_in? %>
+			    Signed in as <%= current_user.email %>. Not you?
+			    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+			  <% else %>
+			    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %> or <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+			  <% end %>
+			</div>
+		</div>
+	</header>
+	<footer>
+		Created by Jon
+	</footer>
+	<div id="wrap">
+		<div id="sidebar">
+			<h2>Column 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				...
+			</ul>
+		</div>
+		<section>
+			<%= yield %>
+		</section>
+	</div>
 </body>
 </html>
